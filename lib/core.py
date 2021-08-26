@@ -5,7 +5,7 @@ import requests
 
 
 class Network:
-    def new_circuit(port, password):
+    def new_circuit(password, port=9051):
         with Controller.from_port(port=port) as controller:
             controller.authenticate(password=password)
             controller.signal(Signal.NEWNYM)

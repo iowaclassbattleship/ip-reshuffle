@@ -19,6 +19,10 @@ def test_tor(driver):
     driver.get("https://check.torproject.org/")
 
 
+def test_useragent(driver):
+    driver.get("https://whatmyuseragent.com/")
+
+
 def get(driver, url):
     driver.get(url)
 

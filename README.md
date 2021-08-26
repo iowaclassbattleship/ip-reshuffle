@@ -9,6 +9,12 @@ You will have to have ```tor``` from the command line and set your password with
 
 ```python
 session = core.Network.get_session(config["HttpProxy"], config["HttpsProxy"])
-
 r = session.get("http://httpbin.org/ip")
 ```
+This will allow you to send an Http request over the tor network using a socks5 proxy.
+
+```python
+driver = webdriver.setup_driver(webdriver.profile(config["HttpProxy"]))
+webdriver.test_tor(driver)
+```
+It's also possible to run a selenium Firefox (gecko) instance over a socks5 proxy. With the ```test_tor()``` function selenium will open the ```https://check.torproject.org/``` website to make sure the socks5 proxies are configured properly.
